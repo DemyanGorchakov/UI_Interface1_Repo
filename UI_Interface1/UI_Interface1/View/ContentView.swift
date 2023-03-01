@@ -22,7 +22,7 @@ struct ContentView: View {
             TabView(selection: $selection) {
                 HomeView()
                     .tag("House")
-                Text("SettingView")
+                SettingView()
                     .tag("Box")
                 Text("UserView")
                     .tag("User")
@@ -60,12 +60,8 @@ struct CustomTabView: View {
                 .frame(width: 21, height: 21)
                 .opacity(currentTab == image ? 1 : 0.3)
         }
-
     }
 }
-
-
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

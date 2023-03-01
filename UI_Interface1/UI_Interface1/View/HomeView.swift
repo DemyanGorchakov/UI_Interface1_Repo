@@ -23,7 +23,6 @@ struct HomeView: View {
                 .clipShape(Capsule())
                 .padding(.horizontal, 15)
                 
-                
                 ScrollView(.horizontal, showsIndicators: false){
                     HStack(spacing: 13){
                         ScrollCard(image: "Image1", text: "Title1")
@@ -32,9 +31,7 @@ struct HomeView: View {
                         ScrollCard(image: "images4", text: "Title3")
                     }
                     .shadow(color: .black.opacity(0.3), radius: 4, x: 2, y: 2)
-
                     .padding(.horizontal, 15)
-                    
                 }
                 
                 VStack(alignment: .leading, spacing: 12){
@@ -43,7 +40,6 @@ struct HomeView: View {
                             .fontWeight(.black)
                         Text("Text unit")
                     }
-                    
                     
                     HStack(spacing: 10){
                         PeopleImages(peopleImage: "f1")
@@ -80,8 +76,8 @@ struct HomeView: View {
                 .padding(.horizontal, 15)
                 .foregroundColor(.white)
                 .shadow(color: .black.opacity(0.3), radius: 4, x: 2, y: 2)
-
             }
+            
             ScrollView(.horizontal, showsIndicators: false){
                 HStack{
                     Cards(pngImage: "wind", textElement: "Element 1", someText: "Same text", color: "Blue")
