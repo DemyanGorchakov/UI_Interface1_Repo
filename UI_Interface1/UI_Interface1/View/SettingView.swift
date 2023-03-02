@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct SettingView: View {
+    
     var body: some View {
         
         ScrollView(.vertical, showsIndicators: false){
-            VStack{
+            VStack(spacing: 25){
                 VStack{
                     VStack{
                         VStack(alignment: .leading){
-                            HStack{
+                            HStack(spacing: 100){
                                 Text("Weekly dynamic")
                                     .fontWeight(.heavy)
                                     .font(.system(size: 20))
@@ -23,7 +24,7 @@ struct SettingView: View {
                             }
                             Text("Statics")
                         }
-                        HStack{
+                        HStack(spacing: 30){
                             Static(colorStatic: "Blue")
                             Static(colorStatic: "Blue")
                             Static(colorStatic: "Blue")
@@ -32,9 +33,12 @@ struct SettingView: View {
                             Static(colorStatic: "Blue")
                         }
                     }
+                    .padding()
+                    .frame(maxWidth: .infinity)
                     .background(Color("MainGrey"))
                     .cornerRadius(10)
                 }
+                
                 HStack{
                     VStack(alignment: .leading){
                         Text("Users")
@@ -47,9 +51,7 @@ struct SettingView: View {
                         .frame(width: 200)
                         .foregroundColor(Color("Main"))
                 }
-                Spacer()
-                
-                HStack(alignment: .top){
+                HStack(spacing: 30){
                     ImageTop(imageTop: "f3")
                     ImageTop(imageTop: "f5")
                     ImageTop(imageTop: "f1")
@@ -61,6 +63,7 @@ struct SettingView: View {
                         .padding(10)
                         .background(Color("Red"))
                         .cornerRadius(30)
+                        .shadow(color: .black.opacity(0.4), radius: 4, x: 2, y: 2)
                 }
                 HStack{
                     Image("f3")
@@ -74,12 +77,14 @@ struct SettingView: View {
                         Text("login")
                     }
                     Spacer()
+                    
                     VStack{
                         ButtonEllipsis()
                             .padding(20)
                     }
                 }
                 .padding(.leading, 30)
+                
                 VStack{
                     Image("Image2")
                         .resizable()
@@ -104,13 +109,16 @@ struct SettingView: View {
 }
 
 struct ButtonGear: View {
+    
     var body: some View {
+        
         Button {
-            //            code
+//            <#code#>
         } label: {
             Image(systemName: "gearshape.fill")
                 .foregroundColor(.black)
         }
+
     }
 }
 
@@ -126,6 +134,7 @@ struct ButtonEllipsis: View {
                 .frame(width: 35, height: 9)
                 .foregroundColor(.black)
         }
+
     }
 }
 
