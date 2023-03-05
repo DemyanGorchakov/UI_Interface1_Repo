@@ -12,6 +12,7 @@ struct HomeView: View {
     @State var searchText: String = ""
     
     var body: some View {
+        
         ScrollView{
             VStack(spacing: 25){
                 HStack{
@@ -100,6 +101,7 @@ struct ScrollCard: View {
     var text: String
     
     var body: some View {
+        
         ZStack(alignment: Alignment(horizontal: .leading, vertical: .bottom)){
             Image(image)
                 .resizable()
@@ -136,6 +138,7 @@ struct Cards: View {
     var color: String
     
     var body: some View {
+        
         HStack{
             VStack(alignment: .leading){
                 Image(systemName: pngImage)

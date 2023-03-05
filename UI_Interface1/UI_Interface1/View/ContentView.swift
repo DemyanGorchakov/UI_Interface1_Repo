@@ -17,8 +17,8 @@ struct ContentView: View {
     }
     
     var body: some View {
+        
         ZStack(alignment: .bottom){
-            
             TabView(selection: $selection) {
                 HomeView()
                     .tag("House")
@@ -40,7 +40,6 @@ struct ContentView: View {
             .clipShape(Capsule())
             .shadow(color: Color.black.opacity((0.3)), radius: 10, x: 4, y: 4)
             .frame(width: 200)
-            
         }
     }
 }
@@ -52,6 +51,7 @@ struct CustomTabView: View {
     var image: String
     
     var body: some View {
+        
         Button {
             currentTab = image
         } label: {

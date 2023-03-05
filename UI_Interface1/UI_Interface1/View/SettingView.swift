@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SettingView: View {
     
+    var staticValue: [CGFloat] = [100, 70, 130, 40, 110, 50,]
+
     var body: some View {
         
         ScrollView(.vertical, showsIndicators: false){
@@ -24,13 +26,10 @@ struct SettingView: View {
                             }
                             Text("Statics")
                         }
-                        HStack(spacing: 30){
-                            Static(colorStatic: "Blue")
-                            Static(colorStatic: "Blue")
-                            Static(colorStatic: "Blue")
-                            Static(colorStatic: "Blue")
-                            Static(colorStatic: "Blue")
-                            Static(colorStatic: "Blue")
+                        HStack(alignment: .bottom, spacing: 20) {
+                            ForEach(staticValue, id: \.self) { item in
+                                Static(heightStatic: item)
+                            }
                         }
                     }
                     .padding()
@@ -118,7 +117,6 @@ struct ButtonGear: View {
             Image(systemName: "gearshape.fill")
                 .foregroundColor(.black)
         }
-
     }
 }
 
@@ -134,7 +132,6 @@ struct ButtonEllipsis: View {
                 .frame(width: 35, height: 9)
                 .foregroundColor(.black)
         }
-
     }
 }
 
@@ -171,17 +168,17 @@ struct ButtonCount: View {
 
 struct Static: View {
     
-    var colorStatic: String
+    var heightStatic: CGFloat
     
     var body: some View {
-        VStack{
+        VStack(spacing: 15){
             Rectangle()
-                .frame(width: 20, height: 80)
-                .cornerRadius(20 )
+                .frame(width: 30, height: heightStatic)
+                .cornerRadius(20)
             Circle()
-                .frame(width: 20)
+                .frame(width: 30)
         }
-        .foregroundColor(Color(colorStatic))
+        .foregroundColor(Color("Blue"))
     }
 }
 
